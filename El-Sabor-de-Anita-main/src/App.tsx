@@ -180,23 +180,111 @@ const App: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-[#040404]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold text-white mb-4">Haz tu pedido ahora</h2>
-            <p className="text-slate-400 mb-8 leading-relaxed">
-              Disfruta de la mejor comida sin salir de casa. Ordena con confianza y recibe todo rápido y seguro.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-300 text-slate-950 hover:bg-orange-400 shadow-xl shadow-orange-500/20">
-                <a href="/menu" className="flex items-center gap-2">
-                  🍕 Ver Menú Completo
-                </a>
-              </Button>
-              <Button variant="light" size="lg" className="text-white bg-white/10 border border-white/20 hover:bg-white/20">
-                <a href="/register" className="flex items-center gap-2">
-                  📝 Crear Cuenta
-                </a>
-              </Button>
+        <section className="py-20 relative overflow-hidden bg-[#040404]">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-orange-500 rounded-full mix-blend-screen filter blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-600 rounded-full mix-blend-screen filter blur-3xl" />
+          </div>
+          
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-orange-300 mb-6 shadow-lg shadow-black/20">
+                  🚀 Último paso
+                </span>
+                <h2 className="text-5xl sm:text-6xl font-black text-white mb-6 leading-tight">
+                  Haz tu pedido ahora
+                </h2>
+                <p className="text-xl text-slate-300 mb-8 leading-relaxed">
+                  Disfruta de la mejor comida sin salir de casa. Ordena con confianza y recibe todo rápido y seguro en La Calera.
+                </p>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-2xl">⚡</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">Entrega Rápida</h3>
+                      <p className="text-slate-400">Recibe tu pedido en 30 minutos o menos, garantizado.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-2xl">🛡️</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">100% Seguro</h3>
+                      <p className="text-slate-400">Pagos seguros con múltiples opciones de pago disponibles.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-2xl">👨‍🍳</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-1">Comida de Calidad</h3>
+                      <p className="text-slate-400">Preparado por chefs profesionales con ingredientes frescos.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-gradient-to-r from-orange-400 to-orange-500 text-slate-950 hover:from-orange-500 hover:to-orange-600 shadow-xl shadow-orange-500/30 transform hover:scale-105 transition-all duration-300">
+                    <a href="/menu" className="flex items-center gap-2 text-black font-bold">
+                      🍕 Ver Menú Completo
+                    </a>
+                  </Button>
+                  <Button variant="light" size="lg" className="text-white bg-white/10 border border-white/30 hover:bg-white/20 hover:border-white/40 transform hover:scale-105 transition-all duration-300">
+                    <a href="/register" className="flex items-center gap-2">
+                      📝 Crear Cuenta
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="rounded-3xl overflow-hidden border-2 border-orange-500/30 shadow-2xl shadow-orange-500/20 bg-gradient-to-br from-slate-900 to-slate-950 p-8 transform hover:scale-105 transition-transform duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent" />
+                  
+                  <div className="relative z-10">
+                    <div className="text-6xl mb-6 animate-bounce">🍔</div>
+                    
+                    <div className="space-y-6">
+                      <div className="space-y-2">
+                        <h3 className="text-2xl font-bold text-white">Platos Destacados</h3>
+                        <p className="text-slate-400 text-sm">Los favoritos de nuestros clientes</p>
+                      </div>
+
+                      <div className="space-y-3">
+                        {[
+                          { icon: '🍕', name: 'Pizza Especial', price: '$12.990' },
+                          { icon: '🍔', name: 'Hamburguesa Gourmet', price: '$10.990' },
+                          { icon: '🥗', name: 'Ensalada César Premium', price: '$8.990' },
+                          { icon: '🍜', name: 'Tallarín al Pesto', price: '$11.990' },
+                        ].map((item, index) => (
+                          <div key={index} className="flex items-center justify-between p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-orange-400 transition-all duration-300 group cursor-pointer">
+                            <div className="flex items-center gap-3">
+                              <span className="text-2xl">{item.icon}</span>
+                              <div>
+                                <p className="text-white font-semibold group-hover:text-orange-300 transition-colors">{item.name}</p>
+                              </div>
+                            </div>
+                            <span className="text-orange-400 font-bold text-lg">{item.price}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/20">
+                        <p className="text-sm text-slate-300 mb-2">⭐ <span className="text-orange-300 font-semibold">4.9/5</span> de 1,250+ clientes satisfechos</p>
+                        <p className="text-xs text-slate-400">Nuestros clientes valoran la calidad y rapidez de nuestro servicio</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
